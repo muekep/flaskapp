@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collect User Data</title>
+</head>
+<body style="background-color: gray;">
+    <h1 style="color:lightcoral;">Enter Your Details and Expenses</h1>
+    <form method="POST" action="/submit">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
 
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" required><br>
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <label for="total_income">Total Income:</label><br>
+        <input type="number" id="total_income" name="total_income" required><br><br>
+
+        <h2 style="color:brown">Select Expenses:</h2>
+
+        <input type="checkbox" id="utilities" name="utilities" value="true">
+        <label for="utilities">Utilities:</label>
+        <input type="number" id="utilities_amount" name="utilities_amt" placeholder="Amount spent"><br>
+
+        <input type="checkbox" id="entertainment" name="entertainment" value="true">
+        <label for="entertainment">Entertainment:</label>
+        <input type="number" id="entertainment_amount" name="entertainment_amt" placeholder="Amount spent"><br>
+
+        <input type="checkbox" id="school_fees" name="school_fees" value="true">
+        <label for="school_fees">School Fees:</label>
+        <input type="number" id="school_fees_amount" name="school_fees_amt" placeholder="Amount spent"><br>
+
+        <input type="checkbox" id="shopping" name="shopping" value="true">
+        <label for="shopping">Shopping:</label>
+        <input type="number" id="shopping_amount" name="shopping_amt" placeholder="Amount spent"><br>
+
+        <input type="checkbox" id="healthcare" name="healthcare" value="true">
+        <label for="healthcare">Healthcare:</label>
+        <input type="number" id="healthcare_amount" name="healthcare_amt" placeholder="Amount spent"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <form method='GET' action="{{ url_for('export_data') }}"> <button type='submit'>Export Data</form>
+</body>
+</html>
